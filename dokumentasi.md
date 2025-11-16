@@ -10,7 +10,7 @@ Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini 
 
 * (Catatan: Letakkan file gambar ERD Anda, misalnya `Screenshot 2025-11-16 203501.png`, ke dalam folder proyek, lalu ganti `path/to/erd.png` di bawah ini)
 
-![ERD Sistem Rumah Sakit](/root/perkuliahan/uts-basisdata/uts-basisdata.png)
+![ERD Sistem Rumah Sakit](img/erd.png)
 
 ---
 
@@ -28,15 +28,3 @@ Proyek ini dilengkapi dengan seeder untuk data dummy. Perintah `php artisan migr
 8.  **ResepSeeder**: Mengisi 5 data resep (terhubung ke Kunjungan & Obat).
 
 ---
-
-## 5. (Opsional) Perintah Penting Lainnya
-
-* **Menjalankan migrasi saja (tanpa data dummy):**
-    ```bash
-    php artisan migrate
-    ```
-
-* **Menjalankan seeder secara spesifik:**
-    ```bash
-    php artisan db:seed --class=PasienSeeder
-    ```
