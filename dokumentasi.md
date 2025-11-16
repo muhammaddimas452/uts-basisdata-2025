@@ -4,7 +4,7 @@ Sebuah aplikasi web berbasis Laravel untuk mengelola data operasional rumah saki
 
 ---
 
-## 3. Struktur Database (ERD)
+## 1. Struktur Database (ERD)
 
 Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini menunjukkan relasi antar tabel utama.
 
@@ -14,7 +14,7 @@ Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini 
 
 ---
 
-## 4. Database Seeder
+## 2. Database Seeder
 
 Proyek ini dilengkapi dengan seeder untuk data dummy. Perintah `php artisan migrate:fresh --seed` akan menjalankan `DatabaseSeeder` yang memanggil seeder berikut **secara berurutan**:
 
