@@ -10,7 +10,7 @@ Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini 
 
 * (Catatan: Letakkan file gambar ERD Anda, misalnya `Screenshot 2025-11-16 203501.png`, ke dalam folder proyek, lalu ganti `path/to/erd.png` di bawah ini)
 
-![ERD Sistem Rumah Sakit](path/to/uts-basisdata.png)
+![ERD Sistem Rumah Sakit](/root/perkuliahan/uts-basisdata/uts-basisdata.png)
 
 ---
 
