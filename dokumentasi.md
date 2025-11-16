@@ -1,67 +1,6 @@
-# Sistem Informasi Manajemen Rumah Sakit (SIMRS) - [Nama Proyek Anda]
+# UTS BASIS DATA SISTEM RUMAH SAKIT
 
 Sebuah aplikasi web berbasis Laravel untuk mengelola data operasional rumah sakit, termasuk manajemen pasien, dokter, jadwal, dan rekam medis elektronik (RME) sederhana.
-
----
-
-## 1. Prasyarat (Prerequisites)
-
-Pastikan lingkungan lokal Anda memenuhi persyaratan berikut sebelum instalasi:
-
-* PHP >= 8.1
-* Composer
-* Database (cth: MySQL, PostgreSQL)
-* Node.js & NPM (Opsional, untuk frontend)
-
----
-
-## 2. Cara Instalasi
-
-1.  **Clone Repositori**
-    ```bash
-    git clone [URL_GIT_ANDA]
-    cd [nama-proyek]
-    ```
-
-2.  **Install Dependencies**
-    ```bash
-    composer install
-    ```
-
-3.  **Buat File Environment**
-    Salin file `.env.example` menjadi `.env`.
-    ```bash
-    cp .env.example .env
-    ```
-
-4.  **Generate Key Aplikasi**
-    ```bash
-    php artisan key:generate
-    ```
-
-5.  **Konfigurasi Database**
-    Buka file `.env` dan sesuaikan koneksi database Anda:
-    ```
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=nama_db_anda
-    DB_USERNAME=root
-    DB_PASSWORD=password_anda
-    ```
-
-6.  **Migrasi dan Seeding Database**
-    Perintah ini akan membuat semua tabel dan mengisinya dengan data dummy yang sudah disiapkan.
-    ```bash
-    php artisan migrate:fresh --seed
-    ```
-
-7.  **Jalankan Server**
-    ```bash
-    php artisan serve
-    ```
-
-Buka `http://127.0.0.1:8000` di browser Anda.
 
 ---
 
@@ -71,7 +10,7 @@ Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini 
 
 * (Catatan: Letakkan file gambar ERD Anda, misalnya `Screenshot 2025-11-16 203501.png`, ke dalam folder proyek, lalu ganti `path/to/erd.png` di bawah ini)
 
-![ERD Sistem Rumah Sakit](path/to/erd.png)
+![ERD Sistem Rumah Sakit](path/to/uts-basisdata.png)
 
 ---
 
