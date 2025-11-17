@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::create('dokters', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(RumahSakit::class);
-            $table->foreignIdFor(Poliklinik::class);
+            $table->foreignIdFor(RumahSakit::class)->constrained();
+            $table->foreignIdFor(Poliklinik::class)->constrained();
             $table->string('kode_dokter', 20)->unique();
             $table->string('nip');
             $table->string('str')->comment('Surat Tanda Registrasi Dokter');

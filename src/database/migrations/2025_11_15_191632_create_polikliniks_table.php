@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('polikliniks', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(RumahSakit::class);
+            $table->foreignIdFor(RumahSakit::class)->constrained()
+                  ->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_poli');
             $table->text('deskripsi')->nullable();
             $table->string('kode_poli', 20)->unique();
