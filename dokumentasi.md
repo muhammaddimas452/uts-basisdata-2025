@@ -14,9 +14,7 @@ Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini 
 
 ## 2. Table Rumah Sakit
 
----
-
-## 1. Migration: Struktur Database
+## A. Migration: Struktur Database
 **File:** `database/migrations/xxxx_xx_xx_create_rumah_sakits_table.php`
 
 Tabel `rumah_sakits` dirancang untuk menyimpan detail operasional dan administratif rumah sakit.
@@ -42,7 +40,7 @@ Tabel `rumah_sakits` dirancang untuk menyimpan detail operasional dan administra
 
 ---
 
-## 2. Model: Logika Aplikasi
+## B. Model: Logika Aplikasi
 **File:** `app/Models/RumahSakit.php`
 
 Model ini bertugas sebagai jembatan antara aplikasi Laravel dengan tabel `rumah_sakits`.
@@ -55,6 +53,8 @@ class RumahSakit extends Model
     // Mass Assignment Protection
     protected $guarded = ['id'];
 }
+
+---
 
 ## 2. Database Seeder
 
