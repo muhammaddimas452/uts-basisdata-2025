@@ -19,26 +19,24 @@ Desain database mengikuti alur operasional rumah sakit. Gambar ERD di bawah ini 
 
 Tabel `rumah_sakits` dirancang untuk menyimpan detail operasional dan administratif rumah sakit.
 
-| Nama Kolom | Tipe Data | Aturan / Keterangan |
-| :--- | :--- | :--- |
-| `id` | BigInt (PK) | Auto Increment. |
-| `kode_rs` | String(20) | **Unique**. Kode identifikasi unik untuk setiap RS (misal: RS001). |
-| `nama_rs` | String | Nama lengkap rumah sakit. |
-| `alamat` | Text | Alamat lengkap. |
-| `kota` | String(100) | Kota domisili. |
-| `provinsi` | String(100) | Provinsi domisili. |
-| `telepon` | String(20) | Nomor telepon operasional. |
-| `email` | String | (Nullable) Email resmi, boleh dikosongkan. |
-| `status` | Enum | Pilihan: `'aktif'`, `'nonaktif'`. Default: `'aktif'`. |
-| `tipe_rs` | Enum | Pilihan: `'A'`, `'B'`, `'C'`. Default: `'C'` (Kelas RS). |
-| `timestamps`| DateTime | Mencatat `created_at` dan `updated_at` otomatis. |
+```bash
+ $table->id();
+            $table->string('kode_rs', 20)->unique();
+            $table->string('nama_rs');
+            $table->text('alamat');
+            $table->string('kota', 100);
+            $table->string('provinsi', 100);
+            $table->string('telepon', 20);
+            $table->string('email')->nullable();
+            $table->enum('status', ['aktif','nonaktif'])->default('aktif');
+            $table->enum('tipe_rs', ['A','B', 'C'])->default('C');
+            $table->timestamps();
+```
 
 ### 💡 Penjelasan Teknis Migration
 * **Unique Constraint (`kode_rs`):** Kita menggunakan `$table->string('kode_rs', 20)->unique();` untuk menjamin tidak ada dua rumah sakit yang memiliki kode sistem yang sama.
 * **Enum Types:** Penggunaan tipe data `enum` pada `status` dan `tipe_rs` bertujuan untuk menjaga konsistensi data (Data Integrity), membatasi input hanya pada nilai yang diizinkan sistem.
 * **Default Values:** Memberikan nilai default (`'aktif'` dan `'C'`) memudahkan proses input data jika informasi tersebut belum tersedia.
-
----
 
 ## B. Model: Logika Aplikasi
 **File:** `app/Models/RumahSakit.php`
@@ -53,7 +51,6 @@ class RumahSakit extends Model
     // Mass Assignment Protection
     protected $guarded = ['id'];
 }
-
 ```
 ---
 
