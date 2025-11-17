@@ -45,7 +45,7 @@ Tabel `rumah_sakits` dirancang untuk menyimpan detail operasional dan administra
 
 Model ini bertugas sebagai jembatan antara aplikasi Laravel dengan tabel `rumah_sakits`.
 
-```php
+```bash
 class RumahSakit extends Model
 {
     use HasFactory;
@@ -54,6 +54,7 @@ class RumahSakit extends Model
     protected $guarded = ['id'];
 }
 
+```
 ---
 
 ## 2. Database Seeder
