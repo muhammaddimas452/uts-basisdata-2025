@@ -396,7 +396,7 @@ class Resep extends Model
 
 ## 2. Database Seeder
 
-Proyek ini dilengkapi dengan seeder untuk data dummy. Perintah `dci` akan menjalankan `DatabaseSeeder` yang memanggil seeder berikut **secara berurutan**:
+Proyek ini dilengkapi dengan seeder untuk data dummy, bisa ambil data dummy sesuai tablenya dari **ChatGPT** atau lain-lain. Perintah `dci` akan menjalankan `DatabaseSeeder` yang memanggil seeder berikut **secara berurutan**:
 
 1.  **RumahSakitSeeder**: Mengisi 5 data rumah sakit.
 2.  **PoliklinikSeeder**: Mengisi 5 data poliklinik (terhubung ke RS).
@@ -406,5 +406,32 @@ Proyek ini dilengkapi dengan seeder untuk data dummy. Perintah `dci` akan menjal
 6.  **JadwalPraktekSeeder**: Mengisi 5 data jadwal (terhubung ke Dokter & Poli).
 7.  **KunjunganSeeder**: Mengisi 5 data kunjungan (terhubung ke Pasien & Dokter).
 8.  **ResepSeeder**: Mengisi 5 data resep (terhubung ke Kunjungan & Obat).
+
+### File `DatabaseSeeder.php`.
+
+```bash
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        $this->call([
+            RoleSeeder::class,
+            UserSeeder::class,
+            RumahSakitSeeder::class,
+            PoliklinikSeeder::class,
+            PasienSeeder::class,
+            DokterSeeder::class,
+            ObatSeeder::class,
+            JadwalPraktekSeeder::class,
+            KunjunganSeeder::class,
+            ResepSeeder::class,
+        ]);
+    }
+}
+```
 
 ---
